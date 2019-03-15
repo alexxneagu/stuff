@@ -1,0 +1,10 @@
+def triangular(number):
+  k = 1 #this line sets the first number being squared, represented by the variable k, as 1
+  for i in range(number-1): #this for loop generates the number of perfect squares the user asks for by adding 1 to the number being squared every time it runs, then multiplying this number by itself and adding this number to the perfect square list. It skips 1 because this is already part of the perfect square list (nums).
+    k += 1
+    nums.append(k*k)
+#main
+nums = [1] #this line sets up the perfect squares list with one value in it: 1
+number = input("Enter the amount of perfect squares you want to generate (above 1):") #this line asks how many perfect squares the user wants to generate, however since 1 is already part of the list, this value should be greater than 1
+triangular(number) #this calls on, and runs the function
+print nums #this line prints the list developed within the function, filled with the perfect squares generated (the number of perfect squares is equal to the input called number)
