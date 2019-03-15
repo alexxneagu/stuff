@@ -1,0 +1,13 @@
+item1 = raw_input("What is your name? ")
+
+age1 = input("What is your age? ")
+
+item2 = raw_input("What is your friend's name? ")
+
+age2 = input("What is your friend's age? ")
+
+print "The difference between", item1 + "'s and ", item2 + "'s ages is", age1 - age2
+
+print "The total years shared between", item1 + "'s and", item2 + "'s ages is", age1 + age2
+
+raw_input("\n\nPress Enter to exit")
