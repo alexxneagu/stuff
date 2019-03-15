@@ -1,0 +1,45 @@
+import random
+money = 10
+count = 0
+
+def counter():
+	global money
+	global count
+	if g == r:
+		if choice == 1:
+			print "You guessed right! You win $2\n"
+			money = money + 2
+			count = count + 1
+		if choice == 2:
+			print "You guessed right! You win $5\n"
+			money = money + 5
+			count = count + 1
+	else:
+		print "Incorrect!"
+	print "You have guessed:", count, "numbers right.\n"
+
+#main
+message = raw_input("Hello! This is a guessing game. Here are the rules: \n\n1. You start out with $10 \n2. You can play the easy or hard mode each round. \n3. The easy mode is $1 to play and if you guess the number between 1-2 correctly you win $2. \n4. The hard mode is $2 to play and if you guess the number between 1-5 correctly you win $5.\n5. If you guess the number right 3 times, before you run out of money, you win! \n6. The game text will tell you what to do, just follow the instructions! \n\nPress enter to start!\n")
+while money > 0:
+	print "You have $", money,
+	choice = input("Which game mode would you like to play? \neasy for $1 - enter 1 \nhard for $2 - enter 2\n-->")
+	if choice == 1:
+		if money >= 1:
+			money = money - 1
+			r = random.randrange(2) + 1
+			g = input("\nPick a number from 1 to 2:")
+			counter()
+	elif choice == 2:
+		if money >= 2:
+			money = money - 2
+			r = random.randrange(5) + 1
+			g = input("\nPick a number from 1 to 5:")
+			counter()
+		elif money == 1:
+			print "You don't have enough money to play this version, try the easy version.\n"
+			choice = 1
+	if money == 0:
+		print "You lost! You ran out of money. \nPress run to play again!"
+	if count == 3:
+		print "You guessed the number 3 times before you ran out of money! You won! \nPress run to play again!"
+		break
