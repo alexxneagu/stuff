@@ -1,0 +1,19 @@
+import random
+a = raw_input("Enter an item to put in the list: ")
+b = raw_input("Enter an item to put in the list: ")
+c = raw_input("Enter an item to put in the list: ")
+d = raw_input("Enter an item to put in the list: ")
+e = raw_input("Enter an item to put in the list: ")
+list = [a, b, c, d, e]
+print list
+raw_input ("Press enter to shuffle the list!\n")
+new = ["", "", "", "", ""]
+for i in range(5):
+  y = 1
+  while y == 1:
+    x = random.randrange(5)
+    if list[x] != 0:
+      y = 0
+  new[i] = list[x]
+  list[x] = 0
+print new
