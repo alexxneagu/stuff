@@ -1,0 +1,11 @@
+counter = 0
+n = input("What do you want the first number to count up to? ")
+n2 = input("What do you want the second number to count down from? ")
+raw_input("\n\nPress the enter key to start:")
+a = 1
+while a <= n:
+  b = n2
+  while b > 0:
+    print a, b
+    b = b - 1 
+  a = a+1
