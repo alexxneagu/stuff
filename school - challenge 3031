@@ -1,0 +1,12 @@
+def bubbleSort(alist): #defines the function bubbleSort(alist) that will sort alist from smallest to largest
+  for passnum in range(len(alist)-1, 0, -1): #there are len(alist) numbers in the list, or n, and that there are n-1 pairs of numbers that need to be compared for each pass (pass # represented by passnum). Since after the first pass one number is in the correct place, there will be one less number of passes necessary which is what the , (...0, -1) represents. When passnum reaches 0, the list will be sorted.
+    print passnum #prints the pass number starting with the number of items in the list - 1
+    print alist #prints the list after each pass
+    for i in range(passnum): #for each value of passnum in the rounds, the number of numbers that need to be sorted, i will decrease by 1 
+      if alist[i]>alist[i+1]: #if the number in index i is bigger than the number to the right of it...
+        temp = alist[i] #makes a temporary copy of the number in index 1
+        alist[i] = alist[i+1] #lets the number in index i take the place of the next number to the right
+        alist[i+1] = temp #the number that was originally to the right of the number in index i takes the place of the temp
+alist = [54, 26, 93, 17, 77, 31, 44, 55, 20] #prints the original unsorted list
+bubbleSort(alist) #runs the function bubbleSort(alist)
+print(alist) #prints the bubble sorted list
