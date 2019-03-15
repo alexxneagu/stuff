@@ -1,0 +1,20 @@
+import random
+def die6():
+  roll = random.randrange(6)+1
+  return roll
+def die10():
+  roll = random.randrange(10)+1
+  return roll
+def die20():
+  roll = random.randrange(20)+1
+  return roll
+#main
+while True:
+  pick = input("Which die do you want to roll? 6, 10, 20?")
+  if pick == 6:
+    roll = die6()
+  if pick == 10:
+    roll = die10()
+  if pick == 20:
+    roll = die20()
+  print "You rolled a", roll
