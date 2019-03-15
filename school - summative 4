@@ -1,0 +1,38 @@
+import random #this imports random
+def gamemenu(): 
+  start = raw_input("Press enter to play hangman!\n") #this line starts the game once the player hits enter
+  print("...starting Hangman...") #this line prints the fact that the game will be starting
+  hangman() #this calls and runs the function hangman()
+def hangman():
+  words = ["environmental", "awkward", "dwarves", "bagpipes", "kayaks", "rhythmic", "zombie", "pixel", "levelfive", "plus", "croquet", "flower", "television", "compsci", "purple"] #this sets a word bank available for the game of hangman
+  word = words[random.randrange(15)] #this line randomly picks a word from the list of words to use
+  length = len(word) #this sets the length of the word to the variable length
+  print "The word is", length, "letters long.\n" #this prints the length of the word out for the player
+  wrong = [] #this sets the list of the player's wrong guesses
+  correct = [] #this sets the list of the player's right guesses
+  for i in range(length):
+    correct.append("_") #this appends a "_" for every letter in the word
+  wordlist = list(word) #this converts the word into a list and sets this as a variable wordlist
+  lives = length + 3 #this gives a certain number of lives available to the player
+  while lives > 0: #this program only runs if the player has more lives than 0
+    if correct == wordlist: #this program runs if the list correct is the same as the list wordlist meaning that the guess is identical to the actual word, the player wins!
+      print "\nYou win!! You guessed all the letters! The word was:", word #this prints that the player wins and tells them what the word was
+      gamemenu() #this calls and runs the function gamemenu()
+    letter = raw_input("\nPlease guess a letter:\n") #this asks the player to guess a player
+    if letter in word: #this statement runs if the letter entered is in the word randomly chosen
+      for i in range(len(wordlist)): #this for loop goes through every number in range of the length of the word
+        if wordlist[i] == letter: #if the letter at index i is equal to the letter entered, then:
+          correct[i] = letter #the correct list replaces the "_" with that letter at the same indexes as the ones in wordlist. This leads to the letters being placed in their proper spots in the word.
+      print "\nCorrect! You have", lives, "lives left.\nYou have these letters correct:", correct,"\nWrong guesses:", wrong #this line prints that the letter guessed was correct, it prints the number of lives left, the letters guessed that were correct in their right spots, and the list of wrong numbers that were guessed so far.
+    else: #this code runs if the letter guess wasn't correct
+      lives=lives-1 #this line takes away a player's life
+      wrong.append(letter) #this adds the letter to the list of wrong guesses
+      print "\nIncorrect! You have", lives, "lives left.\nYou have these letters correct:", correct,"\nWrong guesses:", wrong #this line prints that the letter guessed was incorrectly, it prints the number of lives left, the letters guessed that were correct in their right spots, and the list of wrong numbers that were guessed so far.
+  print "\nYou lost! The word was:", word, "\nDo you want to play again? (1 for yes, 2 for no):" #this line runs after there are no more lives for the patients to use, and asks the player wether they want to play again giving them two options.
+  replay= input("-->") #this line asks for the player's choice (wether they want to play again or not)
+  if replay == 1: #if a yes (1), then:
+    gamemenu() #this line calls and runs the function gamemenu()
+  elif replay == 2: #if a no (2), then:
+    print "Bye!" #this line just says bye to the player before the code breaks
+#main
+gamemenu() #this calls on the function gamemenu() and starts the first game
