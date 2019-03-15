@@ -1,0 +1,12 @@
+n1 = input("Enter the first number: ")
+n2 = input("Enter the second number: ")
+asks = raw_input("What function do you want? ADD, SUB, or MULT? ")
+if asks == "ADD":
+  print "The sum is ", n1 + n2
+elif asks == "SUB":
+  print "The difference is ", n1 - n2
+elif asks == "MULT":
+  print "The product is:", n1 * n2
+else:
+  print "You did not pick a valid option"
+  raw_input("\n\nPress Enter to exit")
