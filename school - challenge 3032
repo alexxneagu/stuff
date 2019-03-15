@@ -1,0 +1,18 @@
+import random
+alist=[]
+def list():
+  choice = input("How many numbers do you want from 1-100?")
+  for i in range(choice):
+    alist.append(random.randrange(100)+1)
+def bubbleSort(alist): #this line defines the function bubbleSort(alist) that will sort alist from smallest to largest
+  for passnum in range(len(alist)-1, 0, -1): #this line 
+    for i in range(passnum):
+      if alist[i]<alist[i+1]:
+        temp = alist[i]
+        alist[i] = alist[i+1]
+        alist[i+1] = temp
+#main
+list()
+print "Original list:", alist
+bubbleSort(alist)
+print "Sorted list high to low:", (alist)
