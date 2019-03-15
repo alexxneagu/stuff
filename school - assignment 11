@@ -1,0 +1,12 @@
+a = raw_input("What is the first item you want in the tuple? ")
+b = raw_input("What is the second item you want in the tuple? ")
+c = raw_input("What is the third item you want in the tuple? ")
+d = raw_input("What is the fourth item you want in the tuple? ")
+t1 = (a, b)
+t2 = (c, d)
+print "The first tuple is", t1
+print "The second tuple is", t2
+t1 += t2
+print "Concatenated, the new tuple is: \n", t1
+print "The first item is", t1[0]
+print "The last item is", t1[3]
