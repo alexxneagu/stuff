@@ -1,0 +1,28 @@
+def pick2():
+  r = random.randrange(99)+1
+  g = input("Pick a number from 1 to 99:")
+  if g == r:
+    money = money + 1000
+  return False
+def pick3():
+  r = random.randrange(999)+1
+  g = input("Pick a number from 1 to 999:")
+  if g == r:
+    money = money + 10000
+  return False
+import random
+money = 100
+#main
+while True:
+  print "You have $", money
+  pick = input("Which game do you want to play? \n 1. Pick 2 \n 2. Pick 3 \n -->")
+  money = money - 5
+  yay = False
+  if pick == 1:
+    yay = pick2()
+  else:
+    yay = pick3()
+  if yay:
+    print "You win!"
+  else:
+    print "You lose!"
