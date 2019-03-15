@@ -1,0 +1,24 @@
+e = 0
+while e != 1:
+  a = 0
+  b = 0
+  while a != 1:
+    x = float(input("How many eggs do you have? "))
+    if round(x) - x != 0:
+      print "Enter an integer number"
+      a = 2
+    if round(x) - x == 0:
+      a = 1
+  while b != 1:
+    y = float(input("How many eggs will fit in a carton? "))
+    if round(y) - y != 0:
+      print "Enter an integer number"
+      b =2
+    if round(y) - y == 0:
+      b = 1
+  print "Your ", x, " eggs will fit in ", round(x/y), " cartons with ", x-((round(x/y))*y), "leftover."
+  c = raw_input("Again? Type y to repeat and anything else to exit: ")
+  if c == "y":
+    e = 2
+  else:
+    e = 1
