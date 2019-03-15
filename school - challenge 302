@@ -1,0 +1,39 @@
+import random
+game = 3
+suit = ["spades", "diamonds", "clubs", "hearts"]
+card = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"]
+p1 = []
+p2 = []
+p3 = []
+p4 = []
+player1 = [p1, p2]
+player2 = [p3, p4]
+p1.append(random.choice(suit))
+p1.append(random.choice(card))
+while game == 3:
+  p2.append(random.choice(suit))
+  p2.append(random.choice(card))
+  if p2 == p1:
+    for i in p2:
+      del i
+    game = 3
+  else: 
+    game = 4
+  while game == 4:
+    p3.append(random.choice(suit))
+    p3.append(random.choice(card))
+    if p3 == p2 or p3 == p1:
+      for i in p3:
+        del i
+      game = 4
+    else:
+      game = 5
+    while game == 5:
+      p4.append(random.choice(suit))
+      p4.append(random.choice(card))
+      if p4 == p3 or p4 == p2 or p4 == p1:
+        for i in p4:
+          del i
+      else: 
+        break
+print "Player 1:", player1, "\n", "Player 2:", player2
