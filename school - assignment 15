@@ -1,0 +1,55 @@
+import random
+def a():
+  for i in range (0, 9, 3):
+    for t in range (10, 0, -2):
+      print i , t
+def b():
+  a = raw_input("Enter an item to put in the list: ")
+  b = raw_input("Enter an item to put in the list: ")
+  c = raw_input("Enter an item to put in the list: ")
+  d = raw_input("Enter an item to put in the list: ")
+  e = raw_input("Enter an item to put in the list: ")
+  list = [a, b, c, d, e]
+  print list
+  raw_input ("Press enter to shuffle the list!\n")
+  new = ["", "", "", "", ""]
+  for i in range(5):
+    y = 1
+    while y == 1:
+      x = random.randrange(5)
+      if list[x] != 0:
+        y = 0
+    new[i] = list[x]
+    list[x] = 0
+  print new
+def c():
+  counter = 0
+  n = input("What do you want the first number to count up to? ")
+  n2 = input("What do you want the second number to count down from? ")
+  raw_input("\n\nPress the enter key to start:")
+  a = 1
+  while a <= n:
+    b = n2
+    while b > 0:
+      print a, b
+      b = b - 1 
+    a = a+1
+#main
+while True:
+  choice = raw_input("Assignments 5, 7, and 12 are available to run. \nEnter the number of the assignment you want to run or r for a random number.")
+  if choice == "4":
+    c()
+  elif choice == "5":
+    a()
+  elif choice == "7":
+    b()
+  elif choice == "r":
+    pic = random.randrange(3)
+    if pic == 0:
+      c()
+    elif pic == 1:
+      a()
+    elif pic == 2:
+      b()
+  else:
+    print "Enter a valid number or r"
