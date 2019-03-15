@@ -1,0 +1,10 @@
+courses = input("How many courses are you taking?")
+import random
+summarks = 0
+card = {}
+for i in range(courses):
+  x = raw_input("What is the course you're taking?")
+  a = random.randrange(100)+1 
+  summarks = a + summarks
+  card[x]=a
+print "Your random report card is:", card, "\nYour average is:", summarks/courses
