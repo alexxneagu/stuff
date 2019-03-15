@@ -1,0 +1,22 @@
+def gnomeSort(mylist, n):
+    index = 0 #this sets the list index to 0
+    while index < n: #this line ensures that the program only runs if the index is less than the number of numbers entered by the user
+        if index == 0:
+            index = index + 1 #this moves the index from 0 to 1 for the rest of the code to be able to run
+        if mylist[index] >= mylist[index - 1]:
+            index = index + 1 #this line runs if the object at the index is greater or equal to the object at the index before. If this is met, it increases the index by 1.
+        else:
+            mylist[index], mylist[index-1] = mylist[index-1], mylist[index] #this line runs if the statement above is not met. This means that the object at the index is smaller than the object before it. In this case, this line reverses the order of the two numbers, setting the smaller number before the larger one in the list.
+            index = index - 1 #this line lowers the index by 1 in order to make sure that the numbers are all in order before the sort that just occured.
+    return mylist #this returns the sorted list to be used when called on in the #main
+#main
+mylist=[] #this line creates an empty list to work with
+howmany = input("How many numbers do you want to enter as part of the list?") #this takes in the amount of numbers the user wants to have sorted
+x = 1 #this line sets a variable to 1
+while x<= howmany: #this program runs while the variable x is less/equal to the number of numbers the user wants to sort
+  ask = input("Enter a number for the list:") #this asks the user to enter a number to add to the unsorted list
+  mylist.append(ask) #this line adds the number to the list
+  x = x+1 #this increases the variable x by 1 to keep track of the amount of numbers added to the list so that the program repeats for a certain amount of times
+n = len(mylist) #this sets the length of the list as the variable n
+mylist = gnomeSort(mylist, n) #this calls upon the function gnomSort(mylist, n) to occur for the unsorted list of a specified length
+print "Sorted seqquence after applying Gnome Sort :", mylist #this line prints the list that was sorted using Gnome Sort
