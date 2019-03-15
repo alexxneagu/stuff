@@ -1,0 +1,5 @@
+x = 0
+print "The length of abcdefg is", len("abcdefg")
+while x<7:
+  print "The letter at position", x, "is", "abcdefg"[x]
+  x = x+1
