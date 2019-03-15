@@ -1,0 +1,17 @@
+def s():
+  x = 2*l*w + 2*h*w + 2*l*h
+  print x
+def v():
+  y = l*w*h
+  print y
+#main
+while True:
+  print "Welcome to the box calculator!"
+  l = input("Enter length:")
+  w = input("Enter width:")
+  h = input("Enter height:")
+  choice = input("Enter 1 for surface area, 2 for volume:")
+  if choice == 1:
+    s()
+  if choice == 2:
+    v()
