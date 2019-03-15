@@ -1,0 +1,26 @@
+import random
+again = 0
+x = random.randrange(100)+10
+while (again != 4):
+  rn2 = random.randrange(10)+1
+  rn3 = random.randrange(10)+1
+  rn4 = random.randrange(10)+1
+  y = rn2
+  z = rn3
+  w = rn4
+  print "You have $", x, "in 2cash. Type a number that matches the action:" 
+  print "1. Buy Item 1 for $", y
+  print "2. Buy Item 2 for $", z
+  print "3. Buy Item 3 for $", w
+  print "4. Cash out and Exit"
+  choice = input("--> ")
+  if choice == 1:
+    x = x-y
+  elif choice == 2:
+    x = x-z
+  elif choice == 3:
+    x = x-w
+  elif choice == 4:
+    if x < 0:
+      print "You spent too much cash!"
+    again = 4
