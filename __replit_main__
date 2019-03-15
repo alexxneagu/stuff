@@ -1,0 +1,20 @@
+#Alex Neagu
+
+w = "a"
+x = "r" 
+y = "t" 
+z = "s" 
+
+print w + x + y + z  
+print x + w + y + z 
+print y + w + x + z 
+print z + y + w + x 
+
+l = 1
+m = 2
+n = 3
+o = 4
+
+print m + n
+print o - n  
+print l, m, n, o 
