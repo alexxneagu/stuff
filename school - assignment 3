@@ -1,0 +1,27 @@
+yoyos = 1
+pizza = 2
+nyf = 3
+n1 = input("What restaurant do you want to go to? ")
+if n1 == 1:
+  choco = 1
+  vanilla = 2
+  strawb = 3
+  n2 = input("What ice cream flavor do you want at Yoyo's? ")
+  if n2 == 1:
+    n2 = "chocolate"
+  elif n2 == 2:
+    n2 = "vanilla"
+  elif n2 == 3:
+    n2 = "strawberry"
+  if n2 == 1 or 2 or 3:
+    strawbb = 1 
+    chcochips = 2 
+    gmmywrms = 3 
+    n3 = input ("What topping do you want with your ice cream? ")
+    if n3 == 1:
+      n3 = "strawberries"
+    elif n3 == 2:
+      n3 = "chocolate chips"
+    elif n3 == 3:
+      n3 = "gummyworms"
+print "At Yoyo's, you have ordered: ", n2," as your flavor and ", n3, " as your topping."
