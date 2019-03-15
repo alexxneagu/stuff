@@ -1,0 +1,70 @@
+import random
+
+def play():
+  p = []
+  c = []
+  movep = ["rock", "paper", "scissors"]
+  movec = ["rock", "paper", "scissors"]
+  pick = input("Pick 0 for rock, 1 for paper, 2 for scissors")
+  p.append(movep[pick])
+  c.append(random.choice(movec))
+  print p
+  print c
+  if p == c:
+    result = "tie"
+    return result
+  elif p == "rock" and c == "paper":
+    result = "c"
+    return result
+  elif p == "rock" and c == "scissors":
+    result = "p"
+    return result
+  elif p == "paper" and c == "rock":
+    result = "p"
+    return result
+  elif p == "paper" and c == "scissors":
+    result = "c"
+    return result
+  elif p == "scissors" and c == "rock":
+    result = "c"
+    return result
+  elif p == "scissors" and c == "paper":
+    result = "p"
+    return result
+  for i in p:
+    del i 
+  for i in c:
+    del i
+
+def scoring():
+  pscore = 0
+  cscore = 0
+  while cscore != 5 or pscore != 5:
+    result = play()
+    if result == "p":
+      pscore = pscore + 1
+      print player, "=", pscore
+      print computer, "=", cscore
+    elif result == "tie":
+      pscore = pscore + 1
+      cscore = cscore + 1
+      print player, "=", pscore
+      print computer, "=", cscore
+    elif result == "c":
+      cscore = cscore + 1
+      print player, "=", pscore
+      print computer, "=", cscore
+    if pscore == 5:
+      print player, "wins the game!"
+      print player, "=", pscore
+      print computer, "=", cscore
+    elif cscore == 5:
+      print computer, "wins the game!"
+      print player, "=", pscore
+      print computer, "=", cscore
+  
+#main
+player = raw_input("What is your name?")
+computer = raw_input("What name do you give your opponent?")
+start = raw_input("First one to win 5 times wins, press enter to play!")
+scoring()
